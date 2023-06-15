@@ -2,11 +2,6 @@ import { IsNotEmpty, Length, IsInt, IsEmail } from 'class-validator';
 import { Transform } from 'class-transformer';
 
 export class CreateUserDto {
-  @IsInt()
-  @IsNotEmpty()
-  @Transform(({ value }) => Number.parseInt(value))
-  id: number;
-
   @IsEmail()
   @IsNotEmpty()
   email: string;

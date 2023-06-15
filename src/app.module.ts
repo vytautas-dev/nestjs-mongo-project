@@ -10,7 +10,10 @@ import { MongooseModule } from '@nestjs/mongoose';
     PostsModule,
     UsersModule,
     AuthModule,
-    MongooseModule.forRoot('mongodb://localhost/nest'),
+    MongooseModule.forRoot('mongodb://localhost/nest', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }),
   ],
   controllers: [HealthcheckController],
   providers: [],
